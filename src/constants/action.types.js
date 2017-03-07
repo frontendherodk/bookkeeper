@@ -1,0 +1,8 @@
+export const ADD_EXPENSE = 'ADD_EXPENSE';
+export const UPDATE_EXPENSE = 'UDPATE_EXPENSE';
+export const DELETE_EXPENSE = 'DELETE_EXPENSE';
+
+
+export const ADD_PAYBACK = 'ADD_PAYBACK';
+export const UPDATE_PAYBACK = 'UDPATE_PAYBACK';
+export const DELETE_PAYBACK = 'DELETE_PAYBACK';
