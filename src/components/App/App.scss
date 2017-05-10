@@ -1,0 +1,49 @@
+// LOGO
+.application__title {
+  margin: 36px 0;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  color: #ea4c89;
+}
+
+// USER
+.user {
+  margin: 26px 0 36px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+// NAVIGATION
+.navigation {
+  .menu {
+    list-style: none;
+    margin: 24px 24px 0 24px;
+    padding: 0;
+  }
+
+  .menu__item {
+    margin-bottom: 6px;
+    
+  }
+
+  .menu__link {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    text-decoration: none;
+    color: #666;
+    &:hover {
+      color: #ea4c89;
+      font-weight: 500;
+    }
+  }
+
+  .menu__item .material-icons {
+    width: 28px;
+  }
+}
