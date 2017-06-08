@@ -5,7 +5,9 @@ import ExpenseList from '../../containers/ExpenseList/ExpenseList';
 import AddExpense from '../../containers/AddExpense/AddExpense';
 import CategoryList from '../../containers/CategoryList/CategoryList';
 import AddCategory from '../../containers/AddCategory/AddCategory';
+import AddLoan from '../../containers/AddLoan/';
 import UserList from '../../containers/UserList/UserList';
+import Balance from '../../containers/Balance/Balance';
 
 import './App.scss';
 
@@ -20,9 +22,8 @@ const App = () => (
         <span className="material-icons md-36">person</span>
         Henrik Andersen
       </div>
-      <div className="balance">
-        You're owed: 213.12€
-        {/* TODO Use reslect to get this number*/}
+      <div className="balance-container">
+        <Balance/>
       </div>
       <nav className="navigation">
         <ul className="menu">
@@ -67,6 +68,7 @@ const App = () => (
       <Route exact path="/expenses/add" component={AddExpense} />
       <Route exact path="/categories" component={CategoryList} />
       <Route exact path="/categories/add" component={AddCategory} />
+      <Route exact path="/loans/add" component={AddLoan} />
       <Route exact path="/users" component={UserList} />
       <Route exact path="/refunds" render={() => <div>REFUNDS</div>} />
     </div>

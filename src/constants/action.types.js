@@ -11,3 +11,5 @@ export const UPDATE_CATEGORY = 'UDPATE_CATEGORY';
 export const DELETE_CATEGORY = 'DELETE_CATEGORY';
 
 export const ADD_USER = 'ADD_USER';
+
+export const ADD_LOAN = 'ADD_LOAN';
