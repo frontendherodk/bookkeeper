@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import ExpensesSelector from '../../selectors/index';
+import expensesSelector from '../../selectors/expenses';
 
 import './ExpenseList.scss';
 
@@ -30,8 +30,13 @@ class ExpensesList extends Component {
                     {expense.note}
                   </div>
                   <div className="meta">
-                    <div className="meta-col category" style={{borderColor: expense.category.color.hex}}>
-                      <span className="material-icons md-12">{expense.category.icon}</span>
+                    <div
+                      className="meta-col category"
+                      style={{ borderColor: expense.category.color.hex }}
+                    >
+                      <span className="material-icons md-12">
+                        {expense.category.icon}
+                      </span>
                       {expense.category.name}
                     </div>
                     <div className="meta-col">
@@ -58,7 +63,7 @@ class ExpensesList extends Component {
 }
 
 const mapStateToProps = state => ({
-  expenses: ExpensesSelector(state)
+  expenses: expensesSelector(state)
 });
 
 export default connect(mapStateToProps)(ExpensesList);

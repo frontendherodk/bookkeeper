@@ -3,20 +3,24 @@ import { connect } from 'react-redux';
 import { addExpense } from '../../actions';
 import { Link } from 'react-router-dom';
 import { v4 } from 'node-uuid';
+import moment from 'moment';
 
 import './AddExpense.scss';
 
 class AddExpense extends Component {
   constructor(props) {
     super(props);
-    this.state = {
+
+    this.defaultState = {
       title: '',
-      date: '',
+      date: moment().locale('de').format('L'),
       note: '',
       amount: '',
       category: this.props.categories.length > 0 ? this.props.categories[0].id : 0,
       paidBy: this.props.users.length > 0 ? this.props.users[0].id : 0
     };
+
+    this.state = this.defaultState;
   }
 
   handleAddExpense = e => {
@@ -34,14 +38,7 @@ class AddExpense extends Component {
   };
 
   resetState() {
-    this.setState({
-      date: '',
-      title: '',
-      note: '',
-      amount: '',
-      category: this.props.categories.length > 0 ? this.props.categories[0].id : 0,
-      paidBy: this.props.users.length > 0 ? this.props.users[0].id : 0
-    });
+    this.setState(this.defaultState);
   }
 
   handleInputChange = e => {

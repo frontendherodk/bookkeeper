@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 
 const categoriesSelector = state => state.categories;
-const expensesSelector = state => state.expenses;
+const expenseItemsSelector = state => state.expenses;
 const usersSelector = state => state.users;
 
 const expensesWithCategorySelector = (categories, expenses) => {
@@ -28,8 +28,11 @@ const expensesWithUsersAndCategoriesSelector = (expenses, users) => {
 
 const expenseSelector = createSelector(
   categoriesSelector,
-  expensesSelector,
+  expenseItemsSelector,
   expensesWithCategorySelector
 );
 
 export default createSelector(expenseSelector, usersSelector, expensesWithUsersAndCategoriesSelector);
+
+
+
