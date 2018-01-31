@@ -1,0 +1,43 @@
+.refund-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  .list__item {
+    background: white;
+    border-radius: 2px;
+    padding: 18px 24px;
+    margin-bottom: 12px;
+    color: #333;
+  }
+  .list__item__title {
+    margin: 0 0 12px;
+    font-size: 18px;
+  }
+  .list__link {
+    color: #333;
+    text-decoration: none;
+  }
+  .note {
+    margin-bottom: 16px;
+    font-size: 12px;
+    color: #BDBDBD;
+  }
+  .meta {
+    display: flex;
+    color: #999;
+    font-size: 11px;
+    .material-icons {
+      color: #666;
+      margin-right: 5px;
+    }
+  }
+  .w {
+    display: flex;
+    align-items: center;
+  }
+  .amount {
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: auto;
+  }
+}

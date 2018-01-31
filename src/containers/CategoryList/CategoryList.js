@@ -16,6 +16,9 @@ class CategoryList extends Component {
         </header>
         <div className="content__body">
           {' '}
+          {this.props.categories.length < 1 &&
+            <div className="no-results">No categories have been created</div>
+          }
           <ul className="category-list list">
             {this.props.categories.map(category => (
               <li className="list__item" key={category.id}>

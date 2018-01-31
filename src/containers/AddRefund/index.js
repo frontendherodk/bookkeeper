@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { v4 } from 'node-uuid';
-import { addLoan } from '../../actions';
+import { addRefund } from '../../actions';
 import moment from 'moment';
 import { connect } from 'react-redux';
 
-class AddLoan extends Component {
+class AddRefund extends Component {
   constructor(props) {
     super(props);
     
@@ -19,9 +19,9 @@ class AddLoan extends Component {
     this.state = this.defaultState;
   }
 
-  handleAddLoan = e => {
+  handleAddRefunds = e => {
     e.preventDefault();
-    this.props.addLoan({
+    this.props.addRefund({
       id: v4(),
       user: this.state.user,
       from: this.state.from,
@@ -47,14 +47,14 @@ class AddLoan extends Component {
     return (
       <div>
         <header className="content__header">
-          <h2 className="content__title">Add loan</h2>
-          <Link className="link link--back" to="/loans">
+          <h2 className="content__title">Add refunds</h2>
+          <Link className="link link--back" to="/refunds">
             <span className="material-icons md-12">navigate_before</span>
             Back
           </Link>
         </header>
         <div className="content__body">
-          <form className="form" onSubmit={this.handleAddLoan}>
+          <form className="form" onSubmit={this.handleAddRefunds}>
             <div className="form-group">
               <label htmlFor="user" className="form-group__label" />
               <select
@@ -77,7 +77,7 @@ class AddLoan extends Component {
 
             <div className="form-group">
               <label htmlFor="amount" className="form-group__label">
-                Borrowed
+                Paid
               </label>
               <input
                 type="text"
@@ -92,7 +92,7 @@ class AddLoan extends Component {
 
             <div className="form-group">
               <label htmlFor="from" className="form-group__label">
-                From
+                To
               </label>
               <select
                 name="from"
@@ -129,7 +129,7 @@ class AddLoan extends Component {
               <input
                 type="submit"
                 className="button button--primary"
-                value="Add loan"
+                value="Add refund"
               />
             </div>
 
@@ -143,8 +143,8 @@ class AddLoan extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addLoan: loan => {
-      dispatch(addLoan(loan));
+    addRefund: refund => {
+      dispatch(addRefund(refund));
     }
   };
 };
@@ -153,4 +153,4 @@ const mapStateToProps = state => ({
   users: state.users
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddLoan);
+export default connect(mapStateToProps, mapDispatchToProps)(AddRefund);

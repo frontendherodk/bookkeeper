@@ -8,30 +8,24 @@ const loan = (state = {}, action) => {
         user: action.loan.user,
         from: action.loan.from,
         amount: action.loan.amount,
-      }
+        date: action.loan.date
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
 const loans = (state = [], action) => {
   switch (action.type) {
     case ADD_LOAN:
-      return [
-        ...state,
-        loan(undefined, action)
-      ]
+      return [...state, loan(undefined, action)];
     case UPDATE_LOAN:
-      return [
-        ...state
-      ]
+      return [...state];
     case DELETE_LOAN:
-      return [
-        ...state
-      ]
+      return [...state];
     default:
       return state;
   }
-}
+};
 
 export default loans;

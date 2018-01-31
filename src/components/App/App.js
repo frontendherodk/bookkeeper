@@ -5,7 +5,10 @@ import ExpenseList from '../../containers/ExpenseList/ExpenseList';
 import AddExpense from '../../containers/AddExpense/AddExpense';
 import CategoryList from '../../containers/CategoryList/CategoryList';
 import AddCategory from '../../containers/AddCategory/AddCategory';
+import LoanList from '../../containers/LoanList/';
 import AddLoan from '../../containers/AddLoan/';
+import RefundList from '../../containers/RefundList/';
+import AddRefund from '../../containers/AddRefund/';
 import UserList from '../../containers/UserList/UserList';
 import Balance from '../../containers/Balance/Balance';
 
@@ -68,9 +71,11 @@ const App = () => (
       <Route exact path="/expenses/add" component={AddExpense} />
       <Route exact path="/categories" component={CategoryList} />
       <Route exact path="/categories/add" component={AddCategory} />
+      <Route exact path="/loans" component={LoanList} />
       <Route exact path="/loans/add" component={AddLoan} />
       <Route exact path="/users" component={UserList} />
-      <Route exact path="/refunds" render={() => <div>REFUNDS</div>} />
+      <Route exact path="/refunds/add" component={AddRefund} />
+      <Route exact path="/refunds" component={RefundList} />
     </div>
   </div>
 );

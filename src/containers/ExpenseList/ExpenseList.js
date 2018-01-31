@@ -18,8 +18,11 @@ class ExpensesList extends Component {
         </header>
         <div className="content__body">
           {' '}
+          {this.props.expenses.length < 1 &&
+            <div className="no-results">No expenses have been created</div>
+          }
           <ul className="expense-list list">
-            {this.props.expenses.map(expense => (
+            {this.props.expenses.map(expense =>
               <li className="list__item" key={expense.id}>
                 <Link className="list__link" to={`expense/${expense.id}`}>
                   <div className="w">
@@ -53,7 +56,7 @@ class ExpensesList extends Component {
 
                 </Link>
               </li>
-            ))}
+            )}
           </ul>
           {' '}
         </div>

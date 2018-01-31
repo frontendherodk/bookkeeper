@@ -1,44 +1,44 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import loanSelector from '../../selectors/loans';
+import refundSelector from '../../selectors/refunds';
 import './index.scss';
 
-class LoanList extends Component {
+class RefundList extends Component {
   render() {
     return (
       <div>
         <header className="content__header">
-          <h2 className="content__title">Loans</h2>
-          <Link className="link link--local" to="/loans/add">
-            Add loan
+          <h2 className="content__title">Refunds</h2>
+          <Link className="link link--local" to="/refunds/add">
+            Add refund
           </Link>
         </header>
         <div className="content__body">
           {' '}
-          {this.props.loans.length < 1 &&
-            <div className="no-results">No loans have been created</div>
+          {this.props.refunds.length < 1 &&
+            <div className="no-results">No refunds have been created</div>
           }
-          <ul className="loan-list list">
-            {this.props.loans.map(loan => {
+          <ul className="refund-list list">
+            {this.props.refunds.map(refund => {
               return (
-                <li className="list__item" key={loan.id}>
-                  <Link className="list__link" to={`loan/${loan.id}`}>
+                <li className="list__item" key={refund.id}>
+                  <Link className="list__link" to={`refund/${refund.id}`}>
                     <div className="w">
                       <h2 className="list__item__title">
-                        {loan.user.firstname}
+                        {refund.user.firstname}
                         {' '}
                       </h2>
-                      <span className="amount">€{loan.amount}</span>
+                      <span className="amount">€{refund.amount}</span>
                     </div>
                     <div className="note">
-                      borrowed from {loan.from.firstname}
+                      paid to {refund.from.firstname}
                     </div>
                     <div className="meta">
                       <span className="material-icons md-12">
                         date_range
                       </span>
-                      {loan.date}
+                      {refund.date}
                     </div>
                   </Link>
                 </li>
@@ -52,7 +52,7 @@ class LoanList extends Component {
 }
 
 const mapStateToProps = state => ({
-  loans: loanSelector(state)
+  refunds: refundSelector(state)
 });
 
-export default connect(mapStateToProps)(LoanList);
+export default connect(mapStateToProps)(RefundList);

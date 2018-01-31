@@ -1,4 +1,4 @@
-import {ADD_EXPENSE, ADD_CATEGORY, ADD_LOAN} from '../constants/action.types';
+import {ADD_EXPENSE, ADD_CATEGORY, ADD_LOAN, ADD_REFUND} from '../constants/action.types';
 
 export const addExpense = (expense) => {
   return {
@@ -18,5 +18,12 @@ export const addLoan = (loan) => {
   return {
     type: ADD_LOAN,
     loan
+  }
+}
+
+export const addRefund = (refund) => {
+  return {
+    type: ADD_REFUND,
+    refund
   }
 }
